@@ -20,8 +20,11 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if (isTrigger)
         {
-            Damage(Enemy.transform);
-            isTrigger = false; //Allows for another object to be struck by this one
+            if(col.tag == "Player")
+            {
+                Damage(Enemy.transform);
+                isTrigger = false; //Allows for another object to be struck by this one
+            }
         }
     }
 

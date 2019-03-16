@@ -22,9 +22,12 @@ public class EnemyDoDamage : MonoBehaviour
     {
         if (isTrigger)
         {
-            Damage(Player.transform);
-            EnemyHeadCollider.GetComponent<BoxCollider2D>().enabled = false;
-            isTrigger = false; //Allows for another object to be struck by this one
+            if(col.tag == "Player")
+            {
+                Damage(Player.transform);
+                EnemyHeadCollider.GetComponent<BoxCollider2D>().enabled = false;
+                isTrigger = false; //Allows for another object to be struck by this one
+            }
         }
     }
     void Damage(Transform player)

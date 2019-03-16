@@ -64,12 +64,15 @@
     <Compile Include="Assets\Scripts\CharacterScripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\CharacterScripts\PlayerMovementScript.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\EnemyDeathAnimationScript.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\EnemyDoDamage.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\EnemyHP.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\EnemyPatrol.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\EnemyTakeDamage.cs" />
     <Compile Include="Assets\Scripts\GameController\GameControllerScript.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
+    <Compile Include="Assets\Scripts\PlayformScript\PlatformHoverScript.cs" />
+    <Compile Include="Assets\Scripts\PowerUpScripts\HealthPickup.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Users/thoma/Documents/GitHub/Unity-2D-Sidescroller/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

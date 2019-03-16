@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class GameControllerScript : MonoBehaviour
 {
     public float playerHealth = 1f;
-    public int totalScore = 69;
+    public float maxHealth = 5f;
+    public float totalScore = 69;
 
     public GameObject player;
     public GameObject sceneManager;
@@ -14,6 +15,24 @@ public class GameControllerScript : MonoBehaviour
     public Text totalScoreText;
 
     private bool isDead = false;
+
+    void Update()
+    {
+        if (playerHealth < 0)
+        {
+            playerHealth = 0f;
+        }
+
+        if (playerHealth > maxHealth)
+        {
+            playerHealth = 5;
+        }
+
+
+        playerHealthText.text = "HP: " + playerHealth.ToString();
+        totalScoreText.text = "SCORE: " + totalScore.ToString();
+    }
+
 
     public void TakeDamage(float amount)
     {
@@ -24,10 +43,14 @@ public class GameControllerScript : MonoBehaviour
         }
     }
 
-    void Update()
+    public void AddHealth(float amount)
     {
-        playerHealthText.text = "HP: " + playerHealth.ToString();
-        totalScoreText.text = "SCORE: " + totalScore.ToString();
+        playerHealth += amount;
+    }
+
+    public void AddScore(float amount)
+    {
+        totalScore += amount;
     }
 
 
