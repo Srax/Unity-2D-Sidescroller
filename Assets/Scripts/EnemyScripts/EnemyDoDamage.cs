@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyDoDamage : MonoBehaviour
 {
-    public float damage = 1f;
     public GameObject Player;
+    public float damageDone = 1f;
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -16,13 +16,13 @@ public class EnemyDoDamage : MonoBehaviour
         }
     }
 
-    void Damage(Transform enemy)
+    void Damage(Transform player)
     {
-        EnemyHP e = enemy.GetComponent<EnemyHP>();
+        GameControllerScript gcs = player.GetComponent<GameControllerScript>();
 
-        if (e != null)
+        if (gcs != null)
         {
-            e.TakeDamage(damage);
+            gcs.TakeDamage(damageDone);
         }
     }
 }

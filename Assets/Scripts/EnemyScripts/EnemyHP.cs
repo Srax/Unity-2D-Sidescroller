@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class EnemyHP : MonoBehaviour
 {
+    public GameObject GameMaster;
     public float health = 1f;
     public int worth = 10;
-    //public Image healthBar;
     private bool isDead = false;
+
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
+        health -= amount;        
         //healthBar.fillAmount = health / startHealth;
         if (health <= 0 && !isDead)
         {
@@ -24,7 +25,8 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Enemy died!");
         isDead = true;
+        GameMaster.GetComponent<GameControllerScript>().totalScore += worth;
         Destroy(gameObject);
-
+        
     }
 }
