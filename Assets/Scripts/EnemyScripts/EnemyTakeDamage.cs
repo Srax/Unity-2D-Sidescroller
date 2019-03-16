@@ -7,12 +7,21 @@ public class EnemyTakeDamage : MonoBehaviour
     public GameObject Enemy;
     public float damageTaken = 1f;
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
+    public bool isTrigger = false;
 
-        if (col.gameObject.tag == "Player")
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (!isTrigger)
+        {
+            isTrigger = true;
+        }
+    }
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (isTrigger)
         {
             Damage(Enemy.transform);
+            isTrigger = false; //Allows for another object to be struck by this one
         }
     }
 

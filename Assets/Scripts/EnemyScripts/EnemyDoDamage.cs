@@ -5,17 +5,28 @@ using UnityEngine;
 public class EnemyDoDamage : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject EnemyHeadCollider;
+
     public float damageDone = 1f;
+    public bool isTrigger = false;
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-
-        if (col.gameObject.tag == "Player")
+        if (!isTrigger)
         {
-            Damage(Player.transform);
+            EnemyHeadCollider.GetComponent<BoxCollider2D>().enabled = true;
+            isTrigger = true;
         }
     }
-
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (isTrigger)
+        {
+            Damage(Player.transform);
+            EnemyHeadCollider.GetComponent<BoxCollider2D>().enabled = false;
+            isTrigger = false; //Allows for another object to be struck by this one
+        }
+    }
     void Damage(Transform player)
     {
         GameControllerScript gcs = player.GetComponent<GameControllerScript>();
@@ -26,3 +37,5 @@ public class EnemyDoDamage : MonoBehaviour
         }
     }
 }
+
+
