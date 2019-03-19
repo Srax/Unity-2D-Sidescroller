@@ -59,6 +59,6 @@ public class GameControllerScript : MonoBehaviour
         isDead = true;
         Debug.Log("Player died!");
         //Destroy(player.gameObject);
-        sceneManager.GetComponent<LoadScene>().SceneGameOver();
+        sceneManager.GetComponent<LoadScene>().GameOver();
     }
 }

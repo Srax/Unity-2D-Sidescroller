@@ -4,13 +4,13 @@ using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour
 {
 
-    public void SceneGameOver()
+    public void GameOver()
     {
         Debug.Log("Loading GameOver Scene");
         SceneManager.LoadScene("GameOverScene");
     }
 
-    public void GameScene_Level1()
+    public void Level_1 ()
     {
         Debug.Log("Loading Level 1");
         SceneManager.LoadScene("GameScene_Level1");
@@ -31,5 +31,11 @@ public class LoadScene : MonoBehaviour
     {
         Debug.Log("Loading Tutorial Level");
         SceneManager.LoadScene("TutorialScene");
+    }
+
+    public void WinScene()
+    {
+        Debug.Log("Loading Win Scene");
+        SceneManager.LoadScene("WinScene");
     }
 }

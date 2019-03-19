@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: 6310fd6c6cb263645941f0a1873a0f0d
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: e1f671880de7c2247b961dccbe4ec8dc
   m_configObjects: {}
